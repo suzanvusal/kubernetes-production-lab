@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dev-readonly
+  namespace: dev
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: dev-readonly-role
+  namespace: dev
+rules:
+  - apiGroups: ["", "apps", "batch"]
+    resources: ["pods", "services", "deployments", "replicasets", "jobs"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: dev-readonly-binding
+  namespace: dev
+subjects:
+  - kind: ServiceAccount
+    name: dev-readonly
+    namespace: dev
+roleRef:
+  kind: Role
+  name: dev-readonly-role
+  apiGroup: rbac.authorization.k8s.io
