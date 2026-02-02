@@ -192,3 +192,37 @@ Cluster
     ├── dev namespace
     ├── staging namespace
     └── prod namespace
+
+
+##Day 5-8
+mplement Zero Trust Networking using Kubernetes Network Policies to:
+
+Block all traffic by default
+
+Allow only explicitly permitted communication
+
+Enforce strict environment isolation
+
+Build microsegmentation controls
+
+#Artitecture Target ->
+dev namespace
+   ├── Only allow ingress from:
+   │      - same namespace
+   │      - ingress controllers
+   └── Deny everything else
+
+staging namespace
+   ├── Isolated from dev & prod
+
+prod namespace
+   ├── Strict isolation
+   └── Only production ingress allowed
+
+📂 Directory Structure
+networking/
+  default-deny.yaml
+  dev-allow.yaml
+  prod-allow.yaml
+
+
