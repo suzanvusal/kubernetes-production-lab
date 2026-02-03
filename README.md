@@ -84,3 +84,14 @@ Observable systems
 Incremental evolution
 
 ------------------------------------
+
+Production Traffic Architecture
+Internet
+   ↓
+Load Balancer / Ingress Controller
+   ↓
+Ingress Rules
+   ↓
+Services
+   ↓
+Pods
