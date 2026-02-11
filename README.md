@@ -95,3 +95,22 @@ Ingress Rules
 Services
    ↓
 Pods
+
+------------
+Implement production-grade secrets management using:
+
+HashiCorp Vault
+Kubernetes authentication
+Dynamic secrets
+Secure secret injection
+
+#Artitecture
+
+Application Pod
+   ↓
+Kubernetes Auth
+   ↓
+Vault
+   ↓
+Dynamic Secrets
+
