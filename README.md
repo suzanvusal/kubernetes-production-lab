@@ -114,3 +114,25 @@ Vault
    ↓
 Dynamic Secrets
 
+-------------
+Testing the OPA-
+Create a bad pod:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bad-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+
+Apply:
+
+kubectl apply -f bad-pod.yaml
+
+
+🔥 You should see:
+
+admission webhook denied the request
+Container nginx must define resource limits
