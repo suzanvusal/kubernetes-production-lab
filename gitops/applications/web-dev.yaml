@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<YOUR_GITHUB_USERNAME>/kubernetes-production-lab.git
+    repoURL: https://github.com/suzanv/kubernetes-production-lab.git
     targetRevision: main
     path: helm/charts/web-app
     helm:
